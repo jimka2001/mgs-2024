@@ -12,6 +12,7 @@ def roots(a, b, c):
 
 
 def testRoots():
+    # testing
     assert roots(1, 0, 0) == {0}
     assert roots(3, 6, 3) == {-1}
     assert roots(1, 13, 12) == {-1, -12}
