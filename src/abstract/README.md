@@ -1,1 +1,1 @@
-# mgs-2023 abstract algebra
+# mgs-2024 abstract algebra
