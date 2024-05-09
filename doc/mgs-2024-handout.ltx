@@ -1469,13 +1469,21 @@ Of course we may use multiple loops concentrically and with conditionals.
     and $n$, find all integer solutions ($|x|<n$ and $|y|<n$) to
     the equation $ax + by = c$.  \Eg,
     $2x + 4y = 28$ has $x=12$, $y=1$ as solution but also $x=2$, $y=6$.
+  \item Find all solutions (mod $p$, where $p$ is prime) of
+    \[y^2 = a    x^2 + b x + c\,,\]
+    for given integers $a,b,c$.  \Ie find all
+    $(x,y)$ where $x$ and $y$ are integers
+    $0\leq x < p$ and $0\leq y < p$
+    which satisfy the equation.  Verify that your code finds the
+    solution for $p=5, a=4$, $b = -53568$, $c = -4321728$ to be
+    $(x,y)\in \{(3,4), (3,1), (4, 4), (4,1)\}$.\footnote{See
+    \url{https://www.youtube.com/watch?v=zLEyIT_BCgk}}
   \end{enumerate}
   
 \item Work as team.
 \item Create a new file in the \code{looping} directory.
 \item Try to solve the challenge using \code{any}, \code{all}, \code{next}, \code{for}.
-\item (Optional) If possible, can you make it faster? \Eg, decrease the search space.
-\item When finished and and the code is working, submit a \emph{pull request}.
+\item Can you make it faster? \Eg, decrease the search space.
 \item Show, explain, and defend your solution to your fellow scholars.
 \end{enumerate}
 
