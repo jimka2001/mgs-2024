@@ -269,85 +269,119 @@ This will be done in Section~\ref{sec.setup}.
 \section{Getting Started}
 \label{sec.setup}
 
+I recommend you use the Chrome web browser.
+
+\includegraphics[width=0.8\textwidth]{chrome.png}.
+
 We need to set up the development environment.  Before you can learn
 to use a piece of software, you have to install it. These steps should
 help.
 
 \subsection{Account Creation}
   
-\begin{tabular}{cp{7cm}}
-  \raisebox{-0.8\totalheight}{\includegraphics[width=0.4\textwidth]{github-join.png}}&
-  Create a GitHub account using an abstract user name.  Don't use
-  your real name.  This is self explanatory at the URL
-  \url{https://github.com/join}.
-\end{tabular}
+Create a GitHub account using an abstract user name.  Don't use
+your real name.  This is self explanatory at the URL
+\url{https://github.com/join}.
 
+
+\noindent\includegraphics[width=0.8\textwidth]{github-join.png}
 
 
 
 \subsection{Open the Repository}
   
-\begin{tabular}{cp{0.5\textwidth}}
-  \raisebox{-0.5\totalheight}{\includegraphics[width=0.40\textwidth]{github-mgs-2024.png}}
-  &Open \url{https://github.com/jimka2001/mgs-2024} with your web browser.
-\end{tabular}
+Open \url{https://github.com/jimka2001/mgs-2024} with your web browser.
+
+\noindent\includegraphics[width=0.95\textwidth]{github-mgs-2024.png}
 
 
 
 
 \subsection{Fork yourself a copy}
-  
-\begin{tabular}{cp{6cm}}
-  \raisebox{-0.5\totalheight}{\includegraphics[width=0.6\textwidth]{fork-repo.png}}
-  &  Fork the repository.  This gives you a private copy.  You can make changes
-  here without disturbing anyone.
-\end{tabular}
 
+Fork the repository.  This gives you a private copy.  You can make changes
+  here without disturbing anyone.  
 
+\noindent \includegraphics[width=\textwidth]{fork-repo.png}
 
 
 
 \subsection{Open a Python File}
   
 
+Navigate to \code{src/hello} to see something like this.
 
-
-\begin{tabular}{cp{5cm}}
-  \raisebox{-0.8\totalheight}{\includegraphics[width=0.6\textwidth]{find-hello.png}}
-  &Navigate to \code{src/hello} to see something like this.
-\end{tabular}
+\noindent\includegraphics[width=0.9\textwidth]{find-hello.png}
 
 
 
-
-\begin{tabular}{cp{7cm}}
-  \raisebox{-0.8\totalheight}{\includegraphics[width=0.5\textwidth]{hello-function.png}}
-  &Click \code{hello.py} to open the file in an editor pane.  You
+Click \code{hello.py} to open the file in an editor pane.  You
   should see something like what is shown here:
-\end{tabular}
+
+\noindent\includegraphics[width=0.9\textwidth]{hello-function.png}
 
 
-\begin{tabular}{cp{7cm}}
-  \raisebox{-0.8\totalheight}{\includegraphics[width=0.5\textwidth]{github-dev.png}}
-  & Open the file using \code{github.dev}
-\end{tabular}
+Open the file using \code{github.dev}
 
-\begin{tabular}{cp{7cm}}
-  \raisebox{-0.8\totalheight}{\includegraphics[width=0.5\textwidth]{github-dev-setup.png}}
-  & Wait while setting up.
-\end{tabular}
+\noindent\includegraphics[width=0.9\textwidth]{github-dev.png}
 
-\includegraphics[width=\textwidth]{github-dev-opened.png}
+
+Wait while setting up.
+
+\noindent\includegraphics[width=\textwidth]{github-dev-setup.png}
+
+If this setup never finishes, it may mean you need to use Chrome as your web browser.
+
+
+
+\noindent\includegraphics[width=\textwidth]{github-dev-opened.png}
 
 Finally, the GitHub development environment should be opened.
 
-\subsection{Make a Sample Run}
+
+\subsection{Set up the Editor}
   
-\begin{tabular}{cp{7cm}}
-  \raisebox{-0.8\totalheight}{\includegraphics[width=0.5\textwidth]{hello-terminal-output.png}}
-  &Find the definition \code{hello}.  Find the icon \includegraphics[height=1.0cm]{run-triangle.png}
-  in the top-right of the editor window.  Click the triangle.
-\end{tabular}
+Now you can edit your code but you cannot run nor test it.
+
+Find the icon \includegraphics[width=2cm]{run-debug.png} on the left hand side of the broswer window.   Press that icon to see the following message.
+
+\noindent\includegraphics[width=0.8\textwidth]{continue.png}
+
+Press continue, and you should see a prompt such as the following to create a code space.   
+
+\noindent\includegraphics[width=0.9\textwidth]{create-code-space.png}
+
+Select \includegraphics[width=8cm]{select-create.png}.
+
+You may be asked how many cores do you want.
+
+\noindent\includegraphics[width=0.9\textwidth]{select-cores.png}
+
+You should select the minimum: \includegraphics[width=7cm]{two-cores.png}.
+
+You'll probably now need to reopen the \code{hello.py} file.
+
+\noindent\includegraphics[width=0.9\textwidth]{re-open-python-file.png}
+
+You may be asked to install the Python extension.  Press \textbf{Install}.
+
+\noindent\includegraphics[width=0.9\textwidth]{install-python-extension.png}
+
+
+When it finishes installing, you should see something like this:
+
+\noindent\includegraphics[width=0.9\textwidth]{python-extension.png}
+
+Reopen the explorer: \includegraphics[width=7cm]{explorer2.png}, and select the \code{hello.py} file.
+
+\noindent\includegraphics[width=0.5\textwidth]{explorer.png}
+
+\subsection{Make a Sample Run}
+
+Find the icon \includegraphics[height=1.0cm]{run-triangle.png}
+  in the top-right of the editor window.  Click the triangle, to see a sample run/execution of the code.
+
+\noindent\includegraphics[width=\textwidth]{hello-terminal-output.png}
 
 
 \subsection{Challenges for the Student}
