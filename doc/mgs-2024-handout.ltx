@@ -308,73 +308,77 @@ Fork the repository.  This gives you a private copy.  You can make changes
 
 \subsection{Open a Python File}
   
-
-Navigate to \code{src/hello} to see something like this.
+\begin{itemize}
+\item Navigate to \code{src/hello} to see something like this.
 
 \noindent\includegraphics[width=0.9\textwidth]{find-hello.png}
 
 
 
-Click \code{hello.py} to open the file in an editor pane.  You
+\item Click \code{hello.py} to open the file in an editor pane.  You
   should see something like what is shown here:
 
 \noindent\includegraphics[width=0.9\textwidth]{hello-function.png}
 
 
-Open the file using \code{github.dev}
+\item Open the file using \code{github.dev}
 
 \noindent\includegraphics[width=0.9\textwidth]{github-dev.png}
 
 
-Wait while setting up.
+\item Wait while setting up.
 
 \noindent\includegraphics[width=\textwidth]{github-dev-setup.png}
 
-If this setup never finishes, it may mean you need to use Chrome as your web browser.
+\item If this setup seems to never finish, it may mean you need to use Chrome as your web browser.
 
 
 
 \noindent\includegraphics[width=\textwidth]{github-dev-opened.png}
 
-Finally, the GitHub development environment should be opened.
+\item Finally, the GitHub development environment should be opened.
 
+\end{itemize}
 
 \subsection{Set up the Editor}
   
-Now you can edit your code but you cannot run nor test it.
+\begin{itemize}
 
-Find the icon \includegraphics[width=2cm]{run-debug.png} on the left hand side of the broswer window.   Press that icon to see the following message.
+\item Now you can edit your code but you cannot run nor test it.
+
+\item Find the icon \includegraphics[width=2cm]{run-debug.png} on the left hand side of the browser window.   Press that icon to see the following message.
 
 \noindent\includegraphics[width=0.8\textwidth]{continue.png}
 
-Press continue, and you should see a prompt such as the following to create a code space.   
+\item Press continue, and you should see a prompt such as the following to create a code space.   
 
 \noindent\includegraphics[width=0.9\textwidth]{create-code-space.png}
 
-Select \includegraphics[width=8cm]{select-create.png}.
+\item Select \includegraphics[width=8cm]{select-create.png}.
 
-You may be asked how many cores do you want.
+\item You may be asked how many cores do you want.
 
 \noindent\includegraphics[width=0.9\textwidth]{select-cores.png}
 
-You should select the minimum: \includegraphics[width=7cm]{two-cores.png}.
+\item You should select the minimum: \includegraphics[width=7cm]{two-cores.png}.
 
-You'll probably now need to reopen the \code{hello.py} file.
+\item You'll probably now need to reopen the \code{hello.py} file.
 
 \noindent\includegraphics[width=0.9\textwidth]{re-open-python-file.png}
 
-You may be asked to install the Python extension.  Press \textbf{Install}.
+\item You may be asked to install the Python extension.  Press \textbf{Install}.
 
 \noindent\includegraphics[width=0.9\textwidth]{install-python-extension.png}
 
 
-When it finishes installing, you should see something like this:
+\item When it finishes installing, you should see something like this:
 
 \noindent\includegraphics[width=0.9\textwidth]{python-extension.png}
 
-Reopen the explorer: \includegraphics[width=7cm]{explorer2.png}, and select the \code{hello.py} file.
+\item Reopen the explorer: \includegraphics[width=7cm]{explorer2.png}, and select the \code{hello.py} file.
 
 \noindent\includegraphics[width=0.5\textwidth]{explorer.png}
+\end{itemize}
 
 \subsection{Make a Sample Run}
 
@@ -1004,8 +1008,8 @@ then
 Implement the function \code{quadraticFormula}.  The function should
 implement the mathematical function $x_{1,2}(a,b,c) = \frac{-b \pm
   \sqrt{b^2 - 4a c}}{2a}$.  The function computes the roots of the
-polynomial $a x^2 + b x + c$, assuming $a>0$, and assuming $b^2 \geq
-4a c$.
+polynomial $a x^2 + b x + c$, assuming $a>0$, and assuming
+$b^2 \geq 4 a c$.
 
 \begin{minipage}[c]{0.95\textwidth}\begin{lstlisting}
   def quadraticFormula(a, b, c):
