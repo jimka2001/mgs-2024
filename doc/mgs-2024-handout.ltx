@@ -625,7 +625,7 @@ Similarly, we can define the factorial as
 \end{equation}
 
 or we can define it as
-\begin{equation}
+\begin{equation}\label{eq.2.9.fib}
   n! = \begin{cases}
     1 &\,; \text{if $n=0$}\\
     n \times (n-1)! &\,; \text{if $n > 0$}
@@ -1058,6 +1058,7 @@ Implement the following by refactoring the code above.
 A recursive function is a function which calls itself.
 
 \subsection{Recursive implementation of exponentiation}
+\label{sec.3.3.1}
 
 As an example, let's look at a function which computes $a^n$ for some
 integer or floating point number $a$, and for some integer $n\ge 0$.
@@ -1166,7 +1167,7 @@ done is to recur until the interval is sufficiently small:  i.e., until
 ${x_{right} - x_{left} < \varepsilon}$.
 
 \section{Roots of a Cubic Polynomial}
-
+\label{sec.3.6.cubic}
 
 \noindent\begin{tabular}{cp{7cm}}
   %% Creative commons https://en.wikipedia.org/wiki/File:Polynomialdeg3.svg
@@ -1181,8 +1182,175 @@ ${x_{right} - x_{left} < \varepsilon}$.
   once you know that $r_1$ is a root.  But how can you find~$a$, $b$, and~$c$?
 \end{tabular}
 
+\clearpage
+
+\section{Student Projects}
+
+Each of the following exercises is a suggested project for a small
+team (two or three) of scholars to work on together.  Each project
+requires you to implement a recursive function, sometimes two
+recursive functions.
+
+\subsection{Compute Integral Powers}
+
+\begin{itemize}
+\item Review Section~\ref{sec.recurrence}
+  Equation~\eqref{eq.slow.exponent}.
+
+\item Implement this \emph{slow} power algorithm as a recursive function.  The function should accept a
+number, \code{x} and a power \code{n} and return the value of $x^n$
+using a \emph{recursive} function inspired by
+Equation~\eqref{eq.slow.exponent}.
+
+\item A solution is shown in Section~\ref{sec.3.3.1}.  Try to figure out the
+solution for yourself, before looking too closely at the solution in Section~\ref{sec.3.3.1}.
+
+\item Copy the function \code{power} and change its name to \code{string\_power}.
+Modify the function so that rather than accepting a number (base) and an integer (exponent),
+it now takes a string base and an integer indicating how many occurrences of the string to
+concatenate.
+
+\Eg, \code{string\_power("Hello",3)} should return the string \code{"HelloHelloHello"},
+and \code{string\_power("Hello",1)} should return the string \code{"Hello"}.
+
+\item What should \code{string\_power("Hello",0)} return?  Hint, what is $x^0$?
+
+\item What should \code{string\_power("Hello",-1)} do?  Does repeating a
+string a negative number of times make sense?  Recall that $x^n \cdot x^m = x^{n+m}$
+and $x^n \cdot x^{-n} = x^0$.
+\end{itemize}
+
+\subsection{Compute Greatest Common Divisor}
+
+Write a recursive, binary function \code{gcd} which takes two integers
+and returns their gcd (greatest common divisor).   Do an internet
+search to find the \emph{Euclidian GCD algorithm}.
 
 
+\subsection{Counting Combinations}
+
+Write two functions to compute $n\choose k$, in two different ways.
+
+\begin{itemize}
+\item The first function should directly compute using the
+  \code{factorial} function which was previously developed:
+  \[{n \choose k} = \frac{n!}{k! ~(n-k)!}\,.\]
+\item The second function should be recursively use the formula
+  \[{n \choose k} = \frac{n}{k}\times{{n-1}\choose {k-1}}\,.\]
+  What is the  termination case to avoid infinite recursion?
+\item Be careful when computing $\frac{n}{k}$, because it might not divide evenly.
+  
+  Suggestion rather than computing $\frac{n}{k}\times{{n-1}\choose
+    {k-1}}$ directly, rather compute $\frac{n ~ {{n-1}\choose
+      {k-1}}}{k}$.
+
+\item Do the two function compute the same value?  What about for large values of $n$?
+
+\end{itemize}
+
+
+\subsection{Continued Fraction}
+
+Write a recursive function to approximate the following continued fraction.
+\[\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\cdots}}}}}\]
+
+This computation should be done as follows:
+
+\begin{itemize}
+
+\item Implement a recursive, binary function $f(n,x)$ which computes $a_n$
+according to the following sequence.
+
+\begin{align*}
+  a_0 &= x\\
+  a_1 &= \frac{1}{1+x}\\
+  a_2 &= \frac{1}{1+\frac{1}{1+x}}\\
+  a_3 &= \frac{1}{1+\frac{1}{1+\frac{1}{1+x}}}\\
+   &\vdots\\
+  a_{n} &= \ldots
+\end{align*}
+
+Notice the following simplification which follows closely what your
+Python function should compute.
+
+\begin{align*}
+  a_0 &= x\\
+  a_1 &= \frac{1}{1+a_0}\\
+  a_2 &= \frac{1}{1+a_1}\\
+  a_3 &= \frac{1}{1+a_2}\\
+   &\vdots\\
+  a_{n-1} &= \frac{1}{1+a_{n-1}}\\
+\end{align*}
+
+\item Can you find (using pencil and paper) the exact value of this
+  continued function?  Hint: convert the continued fraction into a
+  quadratic polynomial and find the two roots.  Which root corresponds
+  to the computed value of the continued fraction?
+
+\item How does the exact value depend on $x$? Does the Python
+code you have written depend on $x$?
+
+\end{itemize}
+\subsection{Prime Factorization}
+
+Write two recursive functions: \code{least\_factor} and \code{prime\_factors}.
+\begin{itemize}
+\item \code{least\_factor(n,k)}: with $k< n$, finds the smallest
+  integer $m\ge k$ such that $m\mid n$ ($m$ divides $n$).  There is
+  guaranteed to be such an $m$.  Why?
+
+\item   The \code{least\_factor(n,k)} may require techniques not yet covered in class.
+  Ask for help if you get stuck.
+  
+\item \code{prime\_factors(n)}: returns a list of possibly repeating
+  prime factors of $n$.  This function should make a call to
+  \code{least\_factor} to find the smallest factor of $n$, (call it
+  $p$) which is guaranteed to be prime. Why?  Then if $p\mid n$ then
+  the other prime factors are the prime factors of $\frac{n}{p}$.
+  Compute those with a recursive call.
+
+\item Test your function by multiplying the factors together.  The
+  product of the factors should be the original integer.
+\end{itemize}
+
+
+\subsection{Compute Fibonacci Numbers}
+
+\begin{itemize}
+\item Implement a recursive function \code{fibonacci} which given $n$
+returns the nth Fibonacci number.  The formula can be found in
+Section~\ref{sec.3.3.1} as Equation~\eqref{eq.2.9.fib}.
+
+\item How many recursive calls (exactly or approximately) are needed to
+compute \code{fibonacci(5)}, \code{fibonacci(7)},
+\code{fibonacci(10)}?
+
+\item What is the approximate maximum recursion depth when computing \code{fibonacci(n)}?
+
+\item Suppose that one recursive call requires $m$ bytes, and your
+computer has a total of $M$ bytes of memory, can you find a bound
+for the maximum Fibonacci number which is possible to compute?
+
+\item Search on the internet and find the Binet's formula for
+  computing the nth Fibonacci number.  Implement this function and
+  compare the results to the recursive implementation.  
+\end{itemize}
+
+\subsection{Roots of a Cubic Polynomial}
+
+Every cubic polynomial, $a x^3 + b x^2 + c^x + d$ with real
+coefficients has at least one real root.
+
+\begin{itemize}
+  \item Use the binary search
+technique in Section~\ref{sec.binary.search} to find one such root,
+given the four coefficients.
+
+\item Find the other two roots of the cubic (if they exist) using the technique
+explained in Section~\ref{sec.3.6.cubic}.  To do this you need to
+use a pencil and paper to compute formulas for the three coefficients of
+the quadratic given a root and the four coefficients of the cubic.
+\end{itemize}
 
 \chapter{Logic and Looping}
 

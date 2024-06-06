@@ -2,14 +2,28 @@ from math import sqrt
 
 
 def roots(a, b, c):
-    discr = b*b - 4*a*c
-    if discr < 0:
-        return {}
+    desc = b*b - 4*a*c
+    # refactor
+    if desc < 0:
+        return []
+    elif desc == 0:
+        return [-b/(2*a)]
     else:
-        r = {(-b + sqrt(discr))/(2*a),
-             (-b - sqrt(discr))/(2*a)}
-        return r
+        return [(-b + sqrt(desc))/(2*a),
+                (-b - sqrt(desc))/(2*a)]
 
+#print(type(2))
+#print(type(4.3))
+#print(4 // 3)
+#print(4 / 3)
+#print(4 % 3)
+#print(4.0/3)
+#print([3, 7, {-1, 7, 7}, 7, 43])
+#print({3, 7, -1, 7, 7, 7, 43})
+
+print(roots(1, 1, 1 ))
+print(roots(-2, -2, 24))
+print(roots(1,2,1))
 
 def testRoots():
     # testing
@@ -22,4 +36,4 @@ def testRoots():
     assert roots(1, 2, 2) == {}
 
 
-testRoots()
+#testRoots()
