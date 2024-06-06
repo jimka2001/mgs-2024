@@ -1221,10 +1221,25 @@ and $x^n \cdot x^{-n} = x^0$.
 
 \subsection{Compute Greatest Common Divisor}
 
-Write a recursive, binary function \code{gcd} which takes two integers
-and returns their gcd (greatest common divisor).   Do an internet
-search to find the \emph{Euclidian GCD algorithm}.
+\begin{itemize}
+\item Do an internet search to find the \emph{Euclidean GCD algorithm}.
 
+\item Write a recursive, binary function \code{gcd} which takes two integers
+and returns their gcd (greatest common divisor).   
+
+\item Find good approximations for $\pi$ of the form $\frac{n}{d}$ where $n$ and $d$ are relatively prime.   Two integers are relatively prime if they have no common factors other than 1; \ie if their gcd is 1.
+
+\item \Eg., $\frac{3}{10}$ is a fraction in lowest terms, and is
+  approximately 6.1\% from $\pi$, because
+  \[\frac{|\pi - \frac{3}{10}|}{\pi} \times 100\% \approx 6.1\% \,.\]
+
+\item A better approximation with a larger denominator is
+  $\frac{13}{4}$, having an error of $\approx~3.45\%$.  An even better
+  approximation is $\frac{16}{5}$, which has an error of
+  $\approx~1.86\%$.
+
+  \item Find the best approximation of $\pi \approx \frac{n}{d}$ where  $ 2 \leq d \leq 10000$.
+\end{itemize}
 
 \subsection{Counting Combinations}
 
@@ -1295,8 +1310,8 @@ code you have written depend on $x$?
 Write two recursive functions: \code{least\_factor} and \code{prime\_factors}.
 \begin{itemize}
 \item \code{least\_factor(n,k)}: with $k< n$, finds the smallest
-  integer $m\ge k$ such that $m\mid n$ ($m$ divides $n$).  There is
-  guaranteed to be such an $m$.  Why?
+  integer $m\ge k$ such that~$m\mid n$ ($m$ divides~$n$).  There is
+  guaranteed to be such an~$m$.  Why?
 
 \item   The \code{least\_factor(n,k)} may require techniques not yet covered in class.
   Ask for help if you get stuck.
@@ -1304,8 +1319,9 @@ Write two recursive functions: \code{least\_factor} and \code{prime\_factors}.
 \item \code{prime\_factors(n)}: returns a list of possibly repeating
   prime factors of $n$.  This function should make a call to
   \code{least\_factor} to find the smallest factor of $n$, (call it
-  $p$) which is guaranteed to be prime. Why?  Then if $p\mid n$ then
-  the other prime factors are the prime factors of $\frac{n}{p}$.
+  $p$) which is guaranteed to be prime. Why?  Since~$p\mid n$, then we know
+  the other prime factors of $n$ are the prime factors of~$\frac{n}{p}$.
+  Furthermore, all prime factors of~$\frac{n}{p}$ are greater than or equal to~$p$.
   Compute those with a recursive call.
 
 \item Test your function by multiplying the factors together.  The
