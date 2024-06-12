@@ -2039,7 +2039,7 @@ an element more efficiently according to the following formula.
     e &\,; \text{if $n=0$}\\
     x &\,; \text{if $n=1$}\\
     x \circ x^{n-1} &\,; \text{if $n$ is odd}\\
-    (x^\frac{n}{2})\circ     (x^\frac{n}{2}) &\,; \text{if $n$ is even}\\
+    (x \circ x)^\frac{n}{2} &\,; \text{if $n$ is even}\\
   \end{cases}
 \end{equation}\label{eq.fast.exponent}
 
@@ -2055,7 +2055,7 @@ the power of $|n|$.
     e &\,; \text{if $n=0$}\\
     x &\,; \text{if $n=1$}\\
     x \circ x^{n-1} &\,; \text{if $n>0$ is odd}\\
-    (x^\frac{n}{2})\circ     (x^\frac{n}{2}) &\,; \text{if $n>0$ is even}\\
+    (x \circ x)^\frac{n}{2} &\,; \text{if $n$ is even}\\
     (x^{-1})^{|n|} &\,; \text{if $n<0$}\\
   \end{cases}
 \end{equation}\label{eq.fast.exponent.group}
