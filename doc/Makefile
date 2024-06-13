@@ -6,7 +6,12 @@ SRC_DIR  := .
 IMAGE_DIR := $(SRC_DIR)/img
 LATEXMK = latexmk -pvc --pdf
 
-pdf: mgs-2024-handout.pdf mgs-2024-slides.pdf
+pdf: mgs-2024-handout.pdf mgs-2024-slides.pdf galois.pdf
+
+galois.pdf: ${SRC_DIR}/galois.ltx
+	TEXINPUTS=$(TEXINPUTS):$(IMAGE_DIR) \
+	${LATEXMK} ${SRC_DIR}/galois.ltx || true
+
 
 mgs-2024-slides.pdf : ${SRC_DIR}/mgs-2024-slides.ltx
 	TEXINPUTS=$(TEXINPUTS):$(IMAGE_DIR) \
