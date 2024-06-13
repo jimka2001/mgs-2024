@@ -12,3 +12,5 @@ doc/*.snm
 .DS_Store
 .#*
 .idea
+doc/*~
+doc/*#
