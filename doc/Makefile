@@ -31,9 +31,15 @@ pvc-slides:
 	TEXINPUTS=$(TEXINPUTS):$(IMAGE_DIR) \
 	${LATEXMK} -pvc ${SRC_DIR}/mgs-2024-slides.ltx
 
-WEBPAGE_DIR := $(HOME)/Repos/lre-webpage-jim-newton
+WEBPAGE_REPO := git@gitlab.lre.epita.fr:lre/lre-web/members/jim-newton.git
 
 webpage: mgs-2024-handout.pdf mgs-2024-slides.pdf galois.pdf
-	mkdir -p ${WEBPAGE_DIR}
-	cp mgs-2024-handout.pdf mgs-2024-slides.pdf ${WEBPAGE_DIR}/
-	cp galois.pdf ${WEBPAGE_DIR}/mgs-2024-galois.pdf
+	tmp=$$(mktemp -d) && \
+	git clone --depth 1 --quiet $(WEBPAGE_REPO) $$tmp && \
+	cp mgs-2024-handout.pdf mgs-2024-slides.pdf $$tmp/ && \
+	cp galois.pdf $$tmp/mgs-2024-galois.pdf && \
+	cd $$tmp && \
+	git add mgs-2024-handout.pdf mgs-2024-slides.pdf mgs-2024-galois.pdf && \
+	(git diff --cached --quiet || git commit --quiet -m "Update mgs-2024-handout.pdf, mgs-2024-slides.pdf, mgs-2024-galois.pdf") && \
+	git push --quiet ; \
+	status=$$? ; rm -rf $$tmp ; exit $$status
