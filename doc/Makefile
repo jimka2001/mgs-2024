@@ -4,7 +4,7 @@ all: pdf
 
 SRC_DIR  := .
 IMAGE_DIR := $(SRC_DIR)/img
-LATEXMK = latexmk -pvc --pdf
+LATEXMK = latexmk --pdf
 
 pdf: mgs-2024-handout.pdf mgs-2024-slides.pdf galois.pdf
 
@@ -25,8 +25,15 @@ mgs-2024-handout.pdf : ${SRC_DIR}/mgs-2024-handout.ltx
 
 pvc-handout:
 	TEXINPUTS=$(TEXINPUTS):$(IMAGE_DIR) \
-	${LATEXMK} --pdf ${SRC_DIR}/mgs-2024-handout.ltx
+	${LATEXMK} -pvc ${SRC_DIR}/mgs-2024-handout.ltx
 
 pvc-slides:
 	TEXINPUTS=$(TEXINPUTS):$(IMAGE_DIR) \
-	${LATEXMK} --pdf ${SRC_DIR}/mgs-2024-slides.ltx
+	${LATEXMK} -pvc ${SRC_DIR}/mgs-2024-slides.ltx
+
+WEBPAGE_DIR := $(HOME)/Repos/lre-webpage-jim-newton
+
+webpage: mgs-2024-handout.pdf mgs-2024-slides.pdf galois.pdf
+	mkdir -p ${WEBPAGE_DIR}
+	cp mgs-2024-handout.pdf mgs-2024-slides.pdf ${WEBPAGE_DIR}/
+	cp galois.pdf ${WEBPAGE_DIR}/mgs-2024-galois.pdf
